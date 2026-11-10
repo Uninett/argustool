@@ -1,3 +1,49 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "argustool"
+description = "A Python CLI client for the Argus alert aggregator server, suitable for shell scripts"
+dynamic = ["version"]
+readme = "README.rst"
+authors = [{name="Sikt - Kunnskapssektorens Tjenesteleverandør", email="kontakt@sikt.no"}]
+requires-python = ">=3.11"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+dependencies = [
+    # aka. pyargus
+    "argus-api-client>0.8",
+    # useful for as yet unsupported endpoints
+    "httpx",
+]
+classifiers = [
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+]
+
+[project.urls]
+Home = "https://github.com/Uninett/argustool"
+Pyargus = "https://github.com/Uninett/argustool"
+Argus = "https://network.geant.org/argus/"
+
+[project.scripts]
+argustool = "argustool.__main__:main"
+
+[dependency-groups]
+dev = [
+    "build",
+    "ipython",
+    "pre-commit",
+    "ruff",
+]
+
 [tool.ruff]
 line-length = 88
 extend-exclude = [
