@@ -1,0 +1,15 @@
+.*
+!.git-blame-ignore-revs
+!.github/
+!.gitignore
+!.pre-commit-config.yaml
+
+*~
+*.egg-info/
+*.pyc
+*__pycache__*
+
+Attic/
+build/
+dist/
+reports/
